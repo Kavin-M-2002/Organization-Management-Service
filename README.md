@@ -37,76 +37,78 @@ cd org-management-service
 
 2. Create & Activate Virtual Environment (Optional but Recommended)
 Create:
-python -m venv .venv
+```python -m venv .venv```
 
 Activate (Windows):
-.venv\Scripts\activate
+```.venv\Scripts\activate```
 
 Activate (macOS/Linux):
-source .venv/bin/activate
+```source .venv/bin/activate```
 
 Install Dependencies
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 4. Create .env File
 
 Create a new file named .env in the project root:
 
+```
 MONGO_URI=mongodb://localhost:27017
 MASTER_DB=master_db
 JWT_SECRET=your_strong_secret_here
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
+```
 
 5. Run the Application Locally
 
 Start the FastAPI server:
 
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```uvicorn main:app --reload --host 0.0.0.0 --port 8000```
 
 
 Open Swagger UI:
 
-http://localhost:8000/docs
+**http://localhost:8000/docs**
 
 6. Run Using Docker (Recommended)
 
 Ensure Docker Desktop is running.
 
 Build & start containers:
-docker-compose up --build
+```docker-compose up --build```
 
 Stop containers:
-docker-compose down
+```docker-compose down```
 
 Exposed services:
 Service	URL	Description
-FastAPI App	http://localhost:8000
+FastAPI App	**http://localhost:8000**
 	API Server
-MongoDB	localhost:27017	Database backend
+MongoDB	**localhost:27017**	Database backend
 Running the Application
 
 Once running (via Docker or uvicorn):
 
 Access interactive documentation:
-http://localhost:8000/docs
+**http://localhost:8000/docs**
 
 Test all API routes directly inside Swagger UI.
 
 API Endpoints
 1. Create Organization
-POST /org/create
+**POST /org/create**
 
 2. Get Organization
-GET /org/get?organization_name=<name>
+**GET /org/get?organization_name=<name>**
 
 3. Update Organization
-PUT /org/update
+**PUT /org/update**
 
 4. Delete Organization (Requires Authentication)
-DELETE /org/delete
+**DELETE /org/delete**
 
 5. Admin Login
-POST /admin/login
+**POST /admin/login**
 
 
 Returns JWT token.
@@ -116,33 +118,35 @@ Step 1 — Login
 
 Send:
 
-POST /admin/login
+**POST /admin/login**
 
 
 Response example:
-
+```
 {
   "access_token": "<your-token>",
   "token_type": "bearer"
 }
-
+```
 Step 2 — Click “Authorize” in Swagger UI
 
 Enter:
 
-Bearer <your-token>
+`Bearer <your-token>`
 
 Step 3 — You can now call protected routes
-
+```
 /org/update
 
 /org/delete
+```
 
-
-Push to GitHub
+**Push to GitHub**
+```
 git add .
 git commit -m "Add project files"
 git push origin main
+```
 
 # Architecture Diagram
 <img src="Architecture Diagram.png" alt="Alt text for the diagram" width="2500"/>
