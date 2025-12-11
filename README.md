@@ -1,9 +1,6 @@
 # Organization Management Service
 
-A backend service for creating and managing organizations in a **multi-tenant architecture** using **FastAPI** and **MongoDB**.  
-Each organization receives a **dynamically generated MongoDB collection**, while a master database stores global metadata and admin credentials.  
-Authentication is implemented using **JWT**, and passwords are securely hashed.
-
+A backend service for creating and managing organizations in a **multi-tenant architecture** using **FastAPI** and **MongoDB**. Each organization receives a **dynamically generated MongoDB collection**, while a master database stores global metadata and admin credentials. Authentication is implemented using **JWT**, and passwords are securely hashed.
 
 # Features
 
