@@ -7,14 +7,14 @@ Authentication is implemented using **JWT**, and passwords are securely hashed.
 
 # Features
 
-### ✔ Organization Management
+### Organization Management
 - Create organization with a dedicated MongoDB collection (`org_<name>`)
 - Get organization details
 - Update organization name, email, password  
   → includes collection migration when renaming  
 - Delete organization and its collection
 
-### ✔ Admin Authentication
+### Admin Authentication
 - Admin login using JWT
 - Protected endpoints requiring authentication
 - Passwords hashed with Argon2/bcrypt
