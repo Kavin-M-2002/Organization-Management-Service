@@ -144,7 +144,8 @@ git add .
 git commit -m "Add project files"
 git push origin main
 
-
+# Architecture Diagram
+<img src="Architecture Diagram.png" alt="Alt text for the diagram" width="500"/
 
 # Design Notes
 
