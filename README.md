@@ -1,37 +1,42 @@
-# Description
+# Organization Management Service
 
-A Backend service to create and manage organizations in a multi-tenant style (dynamic collections per org). Built with FastAPI + Motor (MongoDB). Includes JWT admin authentication.
+A backend service for managing organizations in a **multi-tenant architecture** using **FastAPI** and **MongoDB**.  
+Each organization gets its **own dynamic collection**, while the **master database** stores global metadata and admin credentials.  
+Authentication is handled via **JWT**, and passwords are securely hashed.
+
+This project was completed as part of a backend internship assignment.
+
+---
 
 ## Features
-- Create organization with dynamic Mongo collection creation
-- Admin user for each organization (hashed password)
-- Admin login (JWT)
-- Get / Update / Delete organization endpoints
-- Dockerized (Dockerfile + docker-compose)
 
-## Repo layout
-(see detailed structure in project root)
+### Organization Management  
+- Create organization (with dynamic MongoDB collection)  
+- Get organization details  
+- Update organization (name, admin credentials, migrate data to new collection)  
+- Delete organization (collection + metadata removed)
 
-## Quick start (development)
-1. Clone repo
-```bash
-git clone https://github.com/<your-user>/<repo>.git
+### Secure Admin Authentication  
+- Admin login (`/admin/login`)  
+- JWT-based authentication  
+- Protected routes for update/delete  
+- Strong password hashing (Argon2 or bcrypt depending on configuration)
 
-cd Organization_Management_Service
+### Technology Stack  
+- **FastAPI** (Python)  
+- **MongoDB** (Motor async driver)  
+- **JWT (python-jose)**  
+- **Docker & Docker Compose**
 
-2. Create Virtual Environment
-cp .env.example .env
+---
+## Project Structure
 
-3. Build and run docker compose
-docker-compose up --build -d
-
-docker logs -f org_app
-
-4. Create org & login:
-
-POST /org/create (body: organization_name, email, password)
-
-POST /admin/login -> get access_token
-
-Use Authorization: Bearer <token> for protected endpoints.
+Since the solution is intentionally simple and kept in **one file (`main.py`)**, the layout is:
+org_management_service/
+├── main.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── .env.example
+└── README.md
 
