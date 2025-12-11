@@ -8,7 +8,7 @@ This project was developed as part of a backend intern assignment.
 
 ---
 
-# 📌 Table of Contents
+# Table of Contents
 
 1. [Features](#-features)  
 2. [Technology Stack](#-technology-stack)  
@@ -27,7 +27,7 @@ This project was developed as part of a backend intern assignment.
 
 ---
 
-# 🚀 Features
+# Features
 
 ### ✔ Organization Management
 - Create organization with a dedicated MongoDB collection (`org_<name>`)
@@ -43,7 +43,7 @@ This project was developed as part of a backend intern assignment.
 
 ---
 
-# 🧰 Technology Stack
+# Technology Stack
 
 | Component | Technology |
 |----------|------------|
